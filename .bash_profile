@@ -73,6 +73,7 @@ export PATH="/Users/jasonyoon/anaconda/bin:$PATH"
 
 
 # COMMAND ALIAS ================================================================
+alias ls='ls -Gp'
 alias ll='ls -al'
 alias showfiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder'
 alias hidefiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder'
