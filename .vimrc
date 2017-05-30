@@ -15,6 +15,7 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'bling/vim-airline'
 Plugin 'tpope/vim-fugitive'
 Plugin 'flazz/vim-colorschemes'
+Plugin 'vim-airline/vim-airline-themes'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -29,9 +30,10 @@ set laststatus=2             " Necessary for vim-airline
 " let python_highlight_all=1
 " Solarized color scheme
 syntax enable
-"set background=dark
-"let g:solarized_termcolors=256
-colorscheme tomorrow-night
+set background=dark
+"let g:solarized_termcolors=16
+colorscheme solarized
+let g:airline_theme='bubblegum'
 
 "split navigations
 nnoremap <C-J> <C-W><C-J>
