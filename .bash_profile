@@ -41,13 +41,13 @@ txtrst='\e[0m'    # Text Reset
 # COMMAND PROMPT ===============================================================
 # Printed above the prompt
 print_before_prompt () {
-    printf "\n$txtwht%s $bldcyn%s\n" "${PWD/$HOME/~}" $(parse_git_branch)
+    printf "\n$txtylw%s $txtcyn%s\n" "${PWD/$HOME/~}" $(parse_git_branch)
 }
 
 PROMPT_COMMAND=print_before_prompt
 
 # Prompt format: $
-export PS1="\[$bldgrn\]→ \[$txtrst\]"
+export PS1="\[$txtwht\]→ \[$txtrst\]"
 
 # Include git branch in prompt
 parse_git_branch() {
