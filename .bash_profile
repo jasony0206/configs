@@ -44,37 +44,36 @@ print_before_prompt () {
     printf "\n$txtylw%s $txtcyn%s\n" "${PWD/$HOME/~}" $(parse_git_branch)
 }
 
-#PROMPT_COMMAND=print_before_prompt
+PROMPT_COMMAND=""
 
 # Prompt format: $
-#export PS1="\[$txtwht\]→ \[$txtrst\]"
+export PS1="\[$txtblu\]\u\[$txtwht\]@\[$txtgrn\]\h:\[$txtylw\]\w \[$txtwht\]\$ \[$txtrst\]"
 
 # Include git branch in prompt
 parse_git_branch() {
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
 
-LS_COLORS=$LS_COLORS:'di=0;34:' ; export LS_COLORS
 
 # PATH CONFIG ==================================================================
-# export PATH=/bin:/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:$PATH
+export PATH=/bin:/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:$PATH
 
 # Java
-# export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home
 
 # Java Maven
-# export MAVEN_HOME=/Users/jasonyoon/Downloads/apache-maven-3.3.3
-# PATH=$PATH:$MAVEN_HOME/bin
+export MAVEN_HOME=/Users/jasonyoon/Downloads/apache-maven-3.3.3
+PATH=$PATH:$MAVEN_HOME/bin
 
 # Load RVM into a shell session *as a function*
-# [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 # Python Anaconda2 4.3.1 installer
-# export PATH="/Users/jasonyoon/anaconda/bin:$PATH"
+#export PATH="/Users/jasonyoon/anaconda/bin:$PATH"
 
 
 # COMMAND ALIAS ================================================================
-alias ls='ls --color -p'
+alias ls='ls -Gp'
 alias ll='ls -al'
 alias showfiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder'
 alias hidefiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder'
