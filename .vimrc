@@ -1,6 +1,8 @@
 set nocompatible              " required
 filetype off                  " required
 
+" used colorscheme: https://github.com/MartinSeeler/iterm2-material-design
+
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -24,15 +26,8 @@ execute pathogen#infect()
 filetype plugin indent on    " required
 set laststatus=2             " Necessary for vim-airline
 
-" Color scheme
-" jellybeans, monokai,
-" colorscheme monokai
-" let python_highlight_all=1
-" Solarized color scheme
 syntax enable
 set background=dark
-"let g:solarized_termcolors=16
-colorscheme solarized
 let g:airline_theme='bubblegum'
 
 "split navigations
@@ -40,6 +35,10 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+
+" tab navigtaions
+nnoremap tj :tabnext<CR>
+nnoremap tk :tabprev<CR>
 
 set showcmd
 set clipboard=unnamed
@@ -56,3 +55,6 @@ set foldlevel=99
 "nnoremap <space> za
 
 set nu
+set cursorline
+highlight CursorLine ctermbg=238 cterm=NONE
+set mouse=a
